@@ -26,13 +26,13 @@ export default function Hero() {
       </header>
 
       <div className="mx-auto flex w-full max-w-[1440px] flex-col items-center px-4">
-        <div className="relative mt-[34px] w-full max-w-[1080px] md:mt-[58px] lg:mt-[118px]">
+        <div className="relative mt-[34px] w-full max-w-[650px] md:mt-[58px] lg:mt-[118px] lg:max-w-[1300px]">
           <picture>
             <source media="(min-width: 1024px)" srcSet={assetPath("assets/pc/top/main.png")} />
             <img
               src={assetPath("assets/sp/top/main.png")}
               alt={siteConfig.name}
-              className="mx-auto w-[min(69vw,517px)] max-w-full object-contain lg:w-full"
+              className="mx-auto w-[min(69vw,517px)] max-w-full object-contain lg:mx-0 lg:w-[calc(100%-230px)] xl:w-[1079px]"
               loading="eager"
             />
           </picture>
@@ -41,7 +41,7 @@ export default function Hero() {
             <img
               src={assetPath("assets/sp/top/search.png")}
               alt=""
-              className="absolute right-[4%] top-[82%] h-auto w-[15vw] max-w-[108px] translate-y-[-12%] lg:right-[-3px] lg:top-[64%] lg:w-[211px] lg:max-w-none"
+              className="absolute right-[-40px] top-1/2 h-auto w-[clamp(58px,15vw,108px)] -translate-y-1/2 lg:right-0 lg:w-[211px] lg:max-w-none"
               aria-hidden="true"
               loading="eager"
             />
