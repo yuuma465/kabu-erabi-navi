@@ -37,12 +37,12 @@ export default function Hero() {
               loading="eager"
             />
           </picture>
-          <picture>
+          <picture className="hidden lg:block">
             <source media="(min-width: 1024px)" srcSet={assetPath("assets/pc/top/search.png")} />
             <img
               src={assetPath("assets/sp/top/search.png")}
               alt=""
-              className="absolute right-[-40px] top-1/2 h-auto w-[clamp(58px,15vw,108px)] -translate-y-1/2 lg:right-0 lg:w-[211px] lg:max-w-none"
+              className="absolute right-0 top-1/2 h-auto w-[211px] max-w-none -translate-y-1/2"
               aria-hidden="true"
               loading="eager"
             />
