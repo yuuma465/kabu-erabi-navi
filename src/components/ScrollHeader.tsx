@@ -32,19 +32,19 @@ export default function ScrollHeader() {
       <div className="mx-auto flex h-[58px] w-full max-w-[1440px] items-center justify-between gap-2 px-3 md:h-[72px] md:gap-4 md:px-8 lg:px-12">
         <a
           href="#top"
-          className="flex w-[118px] shrink-0 items-center gap-1.5 min-[380px]:w-[140px] md:w-[230px] md:gap-2 lg:w-[300px]"
+          className="flex w-[104px] shrink-0 items-center gap-1 min-[380px]:w-[124px] md:w-[200px] md:gap-1.5 lg:w-[260px]"
           aria-label={`${siteConfig.name} トップへ戻る`}
         >
           <img
             src={assetPath("assets/pc/top/main.png")}
             alt={siteConfig.name}
-            className="h-auto w-[92px] object-contain min-[380px]:w-[112px] md:w-[190px] lg:w-[246px]"
+            className="h-auto w-[80px] object-contain min-[380px]:w-[98px] md:w-[165px] lg:w-[212px]"
             loading="eager"
           />
           <img
             src={assetPath("assets/pc/top/search.png")}
             alt=""
-            className="h-auto w-[22px] object-contain min-[380px]:w-[26px] md:w-[42px] lg:w-[48px]"
+            className="h-auto w-[19px] object-contain min-[380px]:w-[23px] md:w-[36px] lg:w-[42px]"
             aria-hidden="true"
             loading="eager"
           />
