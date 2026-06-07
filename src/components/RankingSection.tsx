@@ -3,7 +3,10 @@ import { assetPath } from "../data/site";
 
 export default function RankingSection() {
   return (
-    <section className="bg-white px-5 pb-[94px] pt-[54px] md:pb-[120px] md:pt-[72px] lg:pb-[160px] lg:pt-[114px]">
+    <section
+      id="verified-list"
+      className="scroll-mt-24 bg-white px-5 pb-[94px] pt-[54px] md:pb-[120px] md:pt-[72px] lg:pb-[160px] lg:pt-[114px]"
+    >
       <div className="mx-auto max-w-[900px]">
         <h2 className="flex justify-center">
           <picture>

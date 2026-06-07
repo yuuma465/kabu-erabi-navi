@@ -6,6 +6,7 @@ import type { CSSProperties } from "react";
 export default function Hero() {
   return (
     <section
+      id="top"
       className="relative overflow-hidden bg-[image:var(--hero-bg-sp)] bg-cover bg-top bg-no-repeat pb-[66px] pt-[68px] md:pb-[86px] lg:bg-[image:var(--hero-bg-pc)] lg:pt-[83px]"
       style={
         {
