@@ -49,6 +49,16 @@ export default function Hero() {
           </picture>
         </div>
 
+        <picture className="mt-5 flex w-full max-w-[517px] justify-end pr-6 lg:hidden">
+          <img
+            src={assetPath("assets/sp/top/search.png")}
+            alt=""
+            className="h-auto w-[clamp(76px,23vw,108px)] object-contain"
+            aria-hidden="true"
+            loading="eager"
+          />
+        </picture>
+
         <picture>
           <source media="(min-width: 1024px)" srcSet={assetPath("assets/pc/top/subtitle.png")} />
           <img
