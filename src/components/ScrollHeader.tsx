@@ -3,7 +3,7 @@ import { assetPath, siteConfig } from "../data/site";
 
 const navItems = [
   { label: "検証済み一覧", href: "#verified-list" },
-  { label: "記事紹介一覧", href: "#article-list" }
+  { label: "記事一覧", href: "#article-list" }
 ];
 
 export default function ScrollHeader() {

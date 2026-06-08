@@ -23,4 +23,9 @@ Viteのbase pathは `GITHUB_REPOSITORY` から自動判定します。カスタ�
 
 - LINE URL: `src/data/site.ts` の `lineUrl`
 - ランキング内容: `src/data/ranking.ts`
+- 記事本文: `src/data/posts.ts`
 - フッターリンク先: `src/data/site.ts` の `footerLinks`
+
+## 記事ページ
+
+記事は `src/data/posts.ts` に追加すると、トップの「記事紹介一覧」に表示されます。詳細ページのURLは `#/posts/記事slug` 形式です。

@@ -4,8 +4,7 @@ import type { CSSProperties } from "react";
 export default function LineCta() {
   return (
     <section
-      id="article-list"
-      className="relative scroll-mt-24 bg-brand-navy py-[28px] md:py-[34px] lg:py-[54px]"
+      className="relative bg-brand-navy py-[28px] md:py-[34px] lg:py-[54px]"
       style={
         {
           "--cta-bg-pc": `url(${assetPath("assets/pc/cta/bg.png")})`,
