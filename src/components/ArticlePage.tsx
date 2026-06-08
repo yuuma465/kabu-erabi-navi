@@ -1,6 +1,6 @@
 import Footer from "./Footer";
 import { getArticleBySlug } from "../data/posts";
-import { assetPath, siteConfig } from "../data/site";
+import { articleEyecatchPath, assetPath, siteConfig } from "../data/site";
 import type { CSSProperties } from "react";
 
 type ArticlePageProps = {
@@ -93,18 +93,28 @@ export default function ArticlePage({ slug }: ArticlePageProps) {
               } as CSSProperties
             }
           >
-            <div className="mx-auto max-w-[980px]">
-              <div className="flex flex-wrap items-center gap-3 text-[12px] font-black md:text-[14px]">
-                <span className="rounded-sm bg-white px-3 py-1 text-brand-blue">{post.category}</span>
-                <time dateTime={post.publishedAt}>{formatDate(post.publishedAt)}</time>
-                {post.updatedAt ? <span>更新 {formatDate(post.updatedAt)}</span> : null}
+            <div className="mx-auto grid max-w-[1080px] gap-9 lg:grid-cols-[1fr_320px] lg:items-center">
+              <div>
+                <div className="flex flex-wrap items-center gap-3 text-[12px] font-black md:text-[14px]">
+                  <span className="rounded-sm bg-white px-3 py-1 text-brand-blue">{post.category}</span>
+                  <time dateTime={post.publishedAt}>{formatDate(post.publishedAt)}</time>
+                  {post.updatedAt ? <span>更新 {formatDate(post.updatedAt)}</span> : null}
+                </div>
+                <h1 className="mt-6 max-w-[860px] break-words text-[30px] font-black leading-[1.35] tracking-normal md:text-[42px] lg:text-[52px]">
+                  {post.title}
+                </h1>
+                <p className="mt-6 max-w-[820px] break-words text-[15px] font-bold leading-[2] md:text-[18px]">
+                  {post.lead}
+                </p>
               </div>
-              <h1 className="mt-6 max-w-[860px] break-words text-[30px] font-black leading-[1.35] tracking-normal md:text-[42px] lg:text-[52px]">
-                {post.title}
-              </h1>
-              <p className="mt-6 max-w-[820px] break-words text-[15px] font-bold leading-[2] md:text-[18px]">
-                {post.lead}
-              </p>
+              <div className="flex min-h-[220px] items-center justify-center rounded-lg bg-white px-8 py-8 shadow-card">
+                <img
+                  src={assetPath(articleEyecatchPath)}
+                  alt={`${post.title}のアイキャッチ画像`}
+                  className="h-auto w-[170px] object-contain md:w-[210px]"
+                  loading="eager"
+                />
+              </div>
             </div>
           </section>
 

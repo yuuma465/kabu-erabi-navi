@@ -1,5 +1,5 @@
 import { articlePosts } from "../data/posts";
-import { postPath } from "../data/site";
+import { articleEyecatchPath, assetPath, postPath } from "../data/site";
 
 function formatDate(value: string) {
   return value.replace(/-/g, ".");
@@ -38,8 +38,17 @@ export default function ArticleListSection() {
                   <span className="text-[12px] font-bold text-[#6d7d8f]">{formatDate(post.publishedAt)}</span>
                 </div>
 
-                <div className="mt-6 flex h-12 w-12 items-center justify-center rounded-md bg-brand-navy text-[18px] font-black text-white">
-                  {String(index + 1).padStart(2, "0")}
+                <div className="relative mt-5 flex aspect-[16/9] items-center justify-center overflow-hidden rounded-md border border-[#d8e4f2] bg-white">
+                  <span className="absolute left-3 top-3 flex h-9 w-9 items-center justify-center rounded-md bg-brand-navy text-[15px] font-black text-white">
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
+                  <img
+                    src={assetPath(articleEyecatchPath)}
+                    alt=""
+                    className="h-[92px] w-auto object-contain md:h-[110px]"
+                    loading="lazy"
+                    aria-hidden="true"
+                  />
                 </div>
 
                 <h3 className="mt-5 break-words text-[18px] font-black leading-[1.6] tracking-normal text-[#223047] md:text-[19px]">

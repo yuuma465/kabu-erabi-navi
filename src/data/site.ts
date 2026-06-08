@@ -6,6 +6,8 @@ export const siteConfig = {
   copyright: "Copyright © 2026 株選びナビ. All rights reserved."
 };
 
+export const articleEyecatchPath = "assets/pc/top/search.png";
+
 export const footerLinks = [
   { label: "ホーム", href: "#top" },
   { label: "記事一覧", href: "#article-list" },
