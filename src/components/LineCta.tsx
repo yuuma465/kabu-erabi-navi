@@ -8,7 +8,9 @@ export default function LineCta() {
       style={
         {
           "--cta-bg-pc": `url(${assetPath("assets/pc/cta/bg.png")})`,
-          "--cta-bg-sp": `url(${assetPath("assets/sp/cta/bg.png")})`
+          "--cta-bg-sp": `image-set(url(${assetPath("assets/sp/cta/bg.png")}) 1x, url(${assetPath(
+            "assets/pc/cta/bg.png"
+          )}) 2x)`
         } as CSSProperties
       }
     >
@@ -22,7 +24,7 @@ export default function LineCta() {
           <picture>
             <source media="(min-width: 1024px)" srcSet={assetPath("assets/pc/cta/button.png")} />
             <img
-              src={assetPath("assets/sp/cta/button.png")}
+              src={assetPath("assets/pc/cta/button.png")}
               alt="一人一人寄り添ってご相談お受けします 公式LINE登録はこちら"
               className="h-auto w-full object-contain"
               loading="lazy"

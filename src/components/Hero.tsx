@@ -11,7 +11,9 @@ export default function Hero() {
       style={
         {
           "--hero-bg-pc": `url(${assetPath("assets/pc/top/background.png")})`,
-          "--hero-bg-sp": `url(${assetPath("assets/sp/top/background.png")})`
+          "--hero-bg-sp": `image-set(url(${assetPath("assets/sp/top/background.png")}) 1x, url(${assetPath(
+            "assets/pc/top/background.png"
+          )}) 2x)`
         } as CSSProperties
       }
     >
@@ -30,6 +32,10 @@ export default function Hero() {
         <div className="relative mt-[34px] w-full max-w-[650px] md:mt-[58px] lg:mt-[118px] lg:max-w-[1300px]">
           <picture>
             <source media="(min-width: 1024px)" srcSet={assetPath("assets/pc/top/main.png")} />
+            <source
+              media="(max-width: 1023px)"
+              srcSet={`${assetPath("assets/sp/top/main.png")} 1x, ${assetPath("assets/pc/top/main.png")} 2x`}
+            />
             <img
               src={assetPath("assets/sp/top/main.png")}
               alt={siteConfig.name}
@@ -51,7 +57,7 @@ export default function Hero() {
 
         <picture className="mt-5 flex w-full max-w-[517px] justify-end pr-6 lg:hidden">
           <img
-            src={assetPath("assets/sp/top/search.png")}
+            src={assetPath("assets/pc/top/search.png")}
             alt=""
             className="h-auto w-[clamp(76px,23vw,108px)] object-contain"
             aria-hidden="true"
@@ -59,15 +65,11 @@ export default function Hero() {
           />
         </picture>
 
-        <picture>
-          <source media="(min-width: 1024px)" srcSet={assetPath("assets/pc/top/subtitle.png")} />
-          <img
-            src={assetPath("assets/sp/top/subtitle.png")}
-            alt={siteConfig.description}
-            className="mt-7 w-[min(80vw,600px)] object-contain lg:mt-8 lg:w-[992px]"
-            loading="eager"
-          />
-        </picture>
+        <p className="mt-7 flex w-full max-w-[600px] items-center justify-center gap-3 text-center text-[15px] font-black leading-[1.7] text-brand-blue md:text-[18px] lg:mt-8 lg:max-w-[992px] lg:text-[24px]">
+          <span className="h-px w-9 shrink-0 bg-brand-blue md:w-16" aria-hidden="true" />
+          <span>{siteConfig.description}</span>
+          <span className="h-px w-9 shrink-0 bg-brand-blue md:w-16" aria-hidden="true" />
+        </p>
 
         <div className="mt-14 w-full max-w-[1393px] rounded-[10px] bg-white shadow-card lg:mt-[88px]">
           <div className="grid gap-8 px-5 py-9 md:px-9 lg:grid-cols-[300px_1fr] lg:gap-9 lg:px-10 lg:py-12 xl:grid-cols-[344px_1fr] xl:gap-[72px] xl:px-[120px] xl:py-[68px]">

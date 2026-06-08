@@ -12,7 +12,7 @@ export default function RankingSection() {
           <picture>
             <source media="(min-width: 1024px)" srcSet={assetPath("assets/pc/ranking/heading.png")} />
             <img
-              src={assetPath("assets/sp/ranking/heading.png")}
+              src={assetPath("assets/pc/ranking/heading.png")}
               alt="おすすめランキング"
               className="h-auto w-[min(78vw,420px)] object-contain lg:w-[792px]"
               loading="lazy"

@@ -6,6 +6,10 @@ export default function ProfileCard() {
       <div className="flex w-full items-center gap-4 lg:flex-col lg:gap-0">
         <picture>
           <source media="(min-width: 1024px)" srcSet={assetPath("assets/pc/profile/icon.png")} />
+          <source
+            media="(max-width: 1023px)"
+            srcSet={`${assetPath("assets/sp/profile/icon.png")} 1x, ${assetPath("assets/pc/profile/icon.png")} 2x`}
+          />
           <img
             src={assetPath("assets/sp/profile/icon.png")}
             alt="サイト運営者 タダシのプロフィール画像"

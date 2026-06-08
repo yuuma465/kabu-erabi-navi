@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import AppHomeIndicator from "./components/AppHomeIndicator";
 import ArticleListSection from "./components/ArticleListSection";
 import ArticlePage from "./components/ArticlePage";
 import Footer from "./components/Footer";
@@ -54,8 +55,18 @@ export default function App() {
   }, []);
 
   if (route.name === "post") {
-    return <ArticlePage slug={route.slug} />;
+    return (
+      <>
+        <ArticlePage slug={route.slug} />
+        <AppHomeIndicator />
+      </>
+    );
   }
 
-  return <HomePage />;
+  return (
+    <>
+      <HomePage />
+      <AppHomeIndicator />
+    </>
+  );
 }
