@@ -5,60 +5,60 @@ export default function RankingSection() {
   return (
     <section
       id="verified-list"
-      className="scroll-mt-24 bg-[#f4f8fd] px-5 py-[58px] md:py-[76px] lg:py-[112px]"
+      className="scroll-mt-24 bg-white px-5 pb-[94px] pt-[54px] md:pb-[120px] md:pt-[72px] lg:pb-[160px] lg:pt-[114px]"
     >
-      <div className="mx-auto max-w-[1120px]">
-        <div className="max-w-[760px]">
-          <p className="text-[13px] font-black tracking-normal text-brand-blue md:text-[14px]">
-            RANKING
-          </p>
-          <h2 className="mt-2 text-[28px] font-black leading-tight tracking-normal text-[#1f2d3f] md:text-[36px] lg:text-[42px]">
-            おすすめランキング
-          </h2>
-          <p className="mt-4 text-[14px] font-bold leading-[1.9] text-[#42536a] md:text-[16px]">
-            登録前に確認しておきたい投資案件を、優先度順に整理しています。
-          </p>
-        </div>
+      <div className="mx-auto max-w-[900px]">
+        <h2 className="flex justify-center">
+          <picture>
+            <source media="(min-width: 1024px)" srcSet={assetPath("assets/pc/ranking/heading.png")} />
+            <img
+              src={assetPath("assets/sp/ranking/heading.png")}
+              alt="おすすめランキング"
+              className="h-auto w-[min(78vw,420px)] object-contain lg:w-[792px]"
+              loading="lazy"
+            />
+          </picture>
+        </h2>
 
-        <div className="mt-9 grid gap-5 md:grid-cols-3 lg:mt-12 lg:gap-6">
-          {rankingItems.map((item, index) => (
-            <article key={item.id} className="h-full">
+        <div className="mt-[54px] space-y-9 md:mt-[72px] md:space-y-10 lg:mt-[94px] lg:space-y-[52px]">
+          {rankingItems.map((item) => (
+            <article key={item.id}>
               <a
                 href={postPath(item.postSlug)}
-                className="group flex h-full flex-col rounded-lg border border-[#d8e4f2] bg-white p-5 transition-colors hover:border-brand-blue focus:outline-none focus-visible:ring-4 focus-visible:ring-brand-blue/25 md:p-6"
+                className="group grid cursor-pointer items-center gap-5 rounded-lg border border-transparent p-2 transition-colors hover:border-brand-blue hover:bg-[#f7fbff] focus:outline-none focus-visible:ring-4 focus-visible:ring-brand-blue/25 md:grid-cols-[242px_1fr] md:gap-9 lg:grid-cols-[272px_1fr] lg:gap-[52px]"
               >
-                <div className="flex items-center justify-between gap-3">
-                  <span className="rounded-sm bg-brand-pale px-3 py-1 text-[11px] font-black tracking-normal text-brand-blue">
-                    検証記事
-                  </span>
-                  <span className="text-[12px] font-bold text-[#6d7d8f]">
-                    RANK {String(index + 1).padStart(2, "0")}
-                  </span>
-                </div>
-
-                <div className="relative mt-5 flex aspect-[16/9] items-center justify-center overflow-hidden rounded-md border border-[#d8e4f2] bg-white">
-                  <span className="absolute left-3 top-3 flex h-9 w-9 items-center justify-center rounded-md bg-brand-navy text-[15px] font-black text-white">
-                    {String(item.id).padStart(2, "0")}
-                  </span>
+                <div
+                  className="relative flex h-[126px] w-full max-w-[242px] justify-self-center overflow-hidden rounded-md border border-[#d8e4f2] bg-white md:h-[143px] lg:h-[156px] lg:max-w-[272px]"
+                  role="img"
+                  aria-label={item.imageAlt}
+                >
                   <img
                     src={assetPath(articleEyecatchPath)}
-                    alt={item.imageAlt}
-                    className="h-[92px] w-auto object-contain md:h-[110px]"
+                    alt=""
+                    className="m-auto h-auto w-[88px] object-contain transition-transform group-hover:scale-105 md:w-[104px] lg:w-[118px]"
+                    aria-hidden="true"
                     loading="lazy"
                   />
+                  <span className="absolute left-3 top-3 flex h-8 w-8 items-center justify-center rounded-full bg-brand-blue text-sm font-black text-white">
+                    {item.id}
+                  </span>
+                  <span className="absolute bottom-3 left-3 rounded-sm bg-white/90 px-2 py-1 text-[12px] font-black text-brand-blue shadow-[0_2px_8px_rgba(31,74,131,0.12)]">
+                    検証記事
+                  </span>
                 </div>
-
-                <h3 className="mt-5 break-words text-[18px] font-black leading-[1.6] tracking-normal text-[#223047] md:text-[19px]">
-                  {item.title}
-                </h3>
-                {item.description ? (
-                  <p className="mt-3 flex-1 break-words text-[13px] font-bold leading-[1.9] text-[#536477] md:text-[14px]">
-                    {item.description}
-                  </p>
-                ) : null}
-                <span className="mt-6 inline-flex text-[13px] font-black text-brand-blue group-hover:underline">
-                  詳しく見る
-                </span>
+                <div className="text-center md:text-left">
+                  <h3 className="break-words text-[17px] font-black leading-[1.8] text-[#262626] md:text-[18px] lg:text-[20px]">
+                    {item.title}
+                  </h3>
+                  {item.description ? (
+                    <p className="mt-2 break-words text-[13px] font-bold leading-[1.9] text-[#4b4b4b] md:text-[14px] lg:text-[15px]">
+                      {item.description}
+                    </p>
+                  ) : null}
+                  <span className="mt-3 inline-flex text-[13px] font-black text-brand-blue group-hover:underline">
+                    詳しく見る
+                  </span>
+                </div>
               </a>
             </article>
           ))}
